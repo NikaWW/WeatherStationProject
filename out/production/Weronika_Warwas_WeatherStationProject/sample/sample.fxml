@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="back" stylesheets="@Background.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <Button fx:id="btnSearch" blendMode="MULTIPLY" layoutX="183.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnSearchClicked" text="🔍 Search">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Button>
+        <TextField fx:id="txtCity" layoutX="13.0" layoutY="14.0" prefHeight="25.0" prefWidth="167.0" promptText="City...">
+            <font>
+                <Font name="System Italic" size="12.0" />
+            </font>
+        </TextField>
+        <TextArea fx:id="txtLocation" blendMode="MULTIPLY" editable="false" layoutX="381.0" layoutY="80.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="233.0">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets></TextArea>
+        <TextArea fx:id="txtTemp" blendMode="MULTIPLY" editable="false" layoutX="452.0" layoutY="141.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="96.0" style="-fx-background-position: center;">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets></TextArea>
+        <Button fx:id="btnStart" blendMode="MULTIPLY" disable="true" layoutX="464.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnStratClicked" text="Start">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Button>
+        <Button fx:id="btnStop" blendMode="MULTIPLY" disable="true" layoutX="577.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnStopClicked" text="Stop">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Button>
+        <LineChart fx:id="chart1" layoutX="13.0" layoutY="278.0" legendVisible="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="320.0">
+            <xAxis>
+                <CategoryAxis animated="false" side="BOTTOM" tickLabelFill="WHITE" fx:id="xAxis">
+                    <tickLabelFont>
+                        <Font name="System Bold" size="8.0" />
+                    </tickLabelFont></CategoryAxis>
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="yAxis" side="LEFT" tickLabelFill="#fdfdfd">
+                    <tickLabelFont>
+                        <Font name="System Bold" size="10.0" />
+                    </tickLabelFont></NumberAxis>
+            </yAxis>
+        </LineChart>
+        <ImageView fx:id="image" fitHeight="32.0" fitWidth="50.0" layoutX="620.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true" />
+        <TextField fx:id="interval" layoutX="367.0" layoutY="14.0" prefHeight="25.0" prefWidth="41.0" promptText="1" />
+        <Label layoutX="411.0" layoutY="19.0" text="min" textFill="#0b0606">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Button fx:id="btnPause" blendMode="MULTIPLY" disable="true" layoutX="514.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnPauseClicked" prefHeight="25.0" prefWidth="56.0" text="Pause">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Button>
+        <LineChart fx:id="Hchart" layoutX="335.0" layoutY="278.0" legendVisible="false" prefHeight="260.0" prefWidth="320.0">
+            <xAxis>
+                <CategoryAxis fx:id="tHAxis" animated="false" disable="true" focusTraversable="true" side="BOTTOM" tickLabelFill="WHITE">
+                    <tickLabelFont>
+                        <Font name="System Bold" size="8.0" />
+                    </tickLabelFont></CategoryAxis>
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="hAxis" cache="true" cacheHint="SCALE_AND_ROTATE" side="LEFT" tickLabelFill="#fdfbfb">
+                    <tickLabelFont>
+                        <Font name="System Bold" size="10.0" />
+                    </tickLabelFont></NumberAxis>
+            </yAxis>
+        </LineChart>
+        <LineChart fx:id="pChart" layoutX="655.0" layoutY="278.0" legendVisible="false" prefHeight="260.0" prefWidth="330.0">
+            <xAxis>
+                <CategoryAxis fx:id="tPAxis" animated="false" side="BOTTOM" tickLabelFill="#faf8f8">
+                    <tickLabelFont>
+                        <Font name="System Bold" size="8.0" />
+                    </tickLabelFont></CategoryAxis>
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="pAxis" side="LEFT" tickLabelFill="#fdfdfd">
+                    <tickLabelFont>
+                        <Font name="System Bold" size="10.0" />
+                    </tickLabelFont></NumberAxis>
+            </yAxis>
+        </LineChart>
+        <Button fx:id="btnLoad" blendMode="MULTIPLY" disable="true" layoutX="680.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnLoadData" text="Load saved data">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Button>
+        <TextField fx:id="txtTime" blendMode="MULTIPLY" editable="false" layoutX="910.0" layoutY="43.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="75.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextField>
+        <TextArea fx:id="txtTmin" blendMode="MULTIPLY" editable="false" layoutX="729.0" layoutY="204.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="43.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextArea>
+        <TextArea fx:id="txtTmax" blendMode="MULTIPLY" editable="false" layoutX="547.0" layoutY="204.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="38.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextArea>
+        <TextArea fx:id="txtPressure" blendMode="MULTIPLY" editable="false" layoutX="334.0" layoutY="204.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="50.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextArea>
+        <TextArea fx:id="txtHumidity" blendMode="MULTIPLY" cache="true" editable="false" layoutX="222.0" layoutY="204.0" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="26.0" prefWidth="42.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextArea>
+        <Label layoutX="283.0" layoutY="209.0" text=" Pressure" textFill="#110a0a">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="419.0" layoutY="209.0" text="Maximum temeperature" textFill="#0b0505">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="607.0" layoutY="209.0" text="Minimum Temperature" textFill="#0e0000">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="170.0" layoutY="209.0" text="Humidity" textFill="#090000">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="264.0" layoutY="209.0" text="\%" textFill="#030000">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="385.0" layoutY="209.0" text="hpa" textFill="#0b0606">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="274.0" layoutY="19.0" text="Update frequency" textFill="#110707">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="836.0" layoutY="48.0" text="Last update" textFill="#030101">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="540.0" text="Maximum temeperature" textFill="#110c0c">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="39.0" layoutY="590.0" text="Standard deviation" textFill="#110c0c">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="39.0" layoutY="565.0" text="Minimum temeperature" textFill="#191111">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="330.0" layoutY="540.0" text="Maximum humidity" textFill="#090404">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="330.0" layoutY="565.0" text="Minimum humidity" textFill="#130909">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="330.0" layoutY="590.0" text="Standard deviation" textFill="#0b0707">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="631.0" layoutY="590.0" text="Standard deviation" textFill="#190c0c">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="631.0" layoutY="565.0" text="Minimum pressure" textFill="#060303">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="631.0" layoutY="540.0" text="Maximum pressure" textFill="#010000">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="330.0" layoutY="650.0" text="Number of measurements" textFill="#0b0606">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font></Label>
+        <TextField fx:id="Ttmax" blendMode="MULTIPLY" editable="false" layoutX="170.0" layoutY="535.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="48.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="Tsdp" blendMode="MULTIPLY" editable="false" layoutX="740.0" layoutY="585.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="48.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="Tsdt" blendMode="MULTIPLY" editable="false" layoutX="170.0" layoutY="585.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="48.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="Tpmin" blendMode="MULTIPLY" editable="false" layoutX="740.0" layoutY="560.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="48.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="Thmin" blendMode="MULTIPLY" editable="false" layoutX="445.0" layoutY="560.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="48.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="Ttmin" blendMode="MULTIPLY" editable="false" layoutX="170.0" layoutY="560.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="48.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="Tpmax" blendMode="MULTIPLY" editable="false" layoutX="740.0" layoutY="535.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="48.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="Thmax" blendMode="MULTIPLY" editable="false" layoutX="445.0" layoutY="535.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="48.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="Tsdh" blendMode="MULTIPLY" editable="false" layoutX="445.0" layoutY="585.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="48.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="Tnom" blendMode="MULTIPLY" editable="false" layoutX="470.0" layoutY="646.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="48.0">
+            <font>
+                <Font name="System Italic" size="11.0" />
+            </font>
+        </TextField>
+        <Button fx:id="Clear" blendMode="MULTIPLY" disable="true" layoutX="626.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnClearOn" text=" Clear">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Label layoutX="836.0" layoutY="19.0" text="Current time" textFill="#030000">
+            <font>
+                <Font name="System Bold Italic" size="11.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="txtcurrentTime" blendMode="MULTIPLY" layoutX="910.0" layoutY="14.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="75.0">
+         <font>
+            <Font name="System Italic" size="11.0" />
+         </font></TextArea>
+      <Label layoutX="548.0" layoutY="150.0" text="°C">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="393.0" layoutY="242.0" prefHeight="17.0" prefWidth="142.0" text="Temperature in Fahrenheit" textAlignment="JUSTIFY" textFill="#060303">
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="585.0" layoutY="209.0" text="°C" textFill="#110505">
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="772.0" layoutY="209.0" text="°C">
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtFahrenheit" blendMode="MULTIPLY" editable="false" layoutX="534.0" layoutY="238.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="60.0">
+         <font>
+            <Font name="System Italic" size="11.0" />
+         </font>
+      </TextArea>
+      <Label layoutX="594.0" layoutY="243.0" text="°F" textFill="#110505">
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font>
+      </Label>
+    </children>
+</Pane>

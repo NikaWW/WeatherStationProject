@@ -1,0 +1,5 @@
+.back{
+    -fx-background-image: url("20180920_170312.jpg");  /* Css file with set picture as a application background. Picture is located in sample folder  */
+    -fx-background-size: cover ;
+
+}
